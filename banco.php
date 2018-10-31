@@ -31,3 +31,4 @@ echo "O numero da conta é ". $pessoa1->getNumero()."<br>";
 echo "Seu plano é ". $pessoa1->getCliente()."<br>";
 
 
+?>
