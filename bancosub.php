@@ -50,15 +50,27 @@ class Poupanca extends Conta{
     public function setJuros($maisnaconta){
         $this->juros = $maisnaconta;
     }
-
+    public function getJuros(){
+        return $this->juros;
+    }
 }
 
+$vini = new Conta();
+$vini->setNumero('0000011-5');
+$vini->setCliente('Premuim');
 
+echo "Conta n ". $vini->getNumero()."<br>";
+echo "Plano ". $vini->getCliente()."<br><br>";
 
+$jhon = new Poupanca();
+$jhon->setNumero('0004388-2');
+$jhon->setCliente('Basico');
+$jhon->setDepositar('1000');
+$jhon->setJuros(0.3);
 
-
-
-
+echo "Conta n ". $jhon->getNumero(). "<br>";
+echo "Plano ". $jhon->getCliente(). "<br>";
+echo "valor de saque ". $jhon->getDepositar(). "<br><br>";
 
 
 ?>
