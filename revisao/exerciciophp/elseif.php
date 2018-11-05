@@ -9,7 +9,7 @@ echo "Olá ". $nome . " ". $sobrenome. "<br>";
 echo "Você é " . $maioridadepenal;
 
 
-if($maioridadepenal >= 18){
+if($maioridadepenal >= 21){
     echo " maior de idade";
 }else{
     echo " menor de idade";
