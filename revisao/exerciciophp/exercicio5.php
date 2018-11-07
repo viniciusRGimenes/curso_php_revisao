@@ -3,7 +3,7 @@
 $tabuada = 1;
 $tabuadaFinal = 10;
 
-$multiplicador = 6;
+$multiplicador = 60;
 
 while($tabuada <= $tabuadaFinal){
     $resultado = $tabuada  * $multiplicador;
