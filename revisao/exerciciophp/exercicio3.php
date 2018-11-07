@@ -5,7 +5,7 @@ $idade = 20;
 $sexo = "MASCULINO";
 
 if($sexo == "feminino" && $idade < 25 ){
-    echo "ACEITA";
+    echo $nome .  " ACEITA";
 }else{
-    echo "NÃO ACEITA";
+    echo $nome .  " NÃO ACEITA";
 }
