@@ -9,3 +9,4 @@ while($tabuada <= $tabuadaFinal){
     $tabuada += 1;
 }
 
+?>
