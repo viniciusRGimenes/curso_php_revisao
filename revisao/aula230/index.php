@@ -18,6 +18,9 @@
     </select><br><br>
 
     <textarea placeholder="Porque escolher a nossa Instituição?" name="bio" rows="5" col="50"></textarea><br><br>
+    
+    <input type="email" name="email" placeholder="E-mail"><br><br>
+    <input type="password" name="senha" placeholder="Senha"><br><br>
 
     <input type="submit" name="enviar dados">
 
