@@ -17,6 +17,8 @@
         <option value="B">Biologia</option>
     </select><br><br>
 
+    <textarea placeholder="Porque escolher a nossa Instituição?" name="bio" rows="5" col="50"></textarea><br><br>
+
     <input type="submit" name="enviar dados">
 
 </form>
