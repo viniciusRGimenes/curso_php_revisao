@@ -33,7 +33,7 @@ $capitais = array("São Paulo",
 if(in_array("Palmas", $capitais)){
     echo "Capital Existe";
 }else {
-    echo "capital não Existe"
+    echo "capital não Existe";
 }
 
 ?>
