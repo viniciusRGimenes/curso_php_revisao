@@ -38,16 +38,22 @@ $result = $conn->query($sql);
 if($result->num_rows > 0 ){
     echo "Total de registros: ". $result->num_rows ."<br>"."<br>";
     echo "<table>";
-    echo"<tr><th>Id</th><th>Nome</th><th>Status</th></tr>";
+    echo"<tr><th>Id</th><th>Nome</th><th>Detalhes</th><th>Status</th></tr>";
 
 
     while($row = $result->fetch_assoc()){
+      
 
         echo "<tr>";
 
         echo "<td>". $row["id"]. "</td>"    ;
         echo "<td>". $row["nome"]."</td>";
-        echo "<td>". $row["status"]."</td>";
+        echo "<td>". $row["detalhes"]. "</td>";
+        if($row["status"]===0){
+            echo "<td>". "desativado". "</td>";
+        }else{
+            echo "<td>". "Ativado"."</td>";
+        }
 
         echo "</tr>";
     }
