@@ -20,7 +20,8 @@
     </style>
 </head>
 <body>
-
+<a href="form_tarefas.php">Incluir</a>
+<br><br>
 <?php
 $servidor = "revisao_db_1";
 $usuario = "root";
@@ -60,7 +61,11 @@ if($result->num_rows > 0 ){
         }else{
             echo "<td>". "Ativado"."</td>";
         }
-        echo "<td><a href='apagar_tarefa.php?id=".$row["id"]."'>Apagar</a></td>";
+        echo "<td>";
+        echo "<a href='apagar_tarefa.php?id=".$row["id"]."'>Apagar</a>";
+        echo "&nbsp;|&nbsp";
+        echo "<a href='form_tarefas.php?id=".$row["id"]."'>Editar</a>";
+        echo "</td>";
         echo "</tr>";
     }
         echo "</table>";
