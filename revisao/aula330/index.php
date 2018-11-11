@@ -1,3 +1,10 @@
+<?php
+
+    $querry = $_GET["q"];
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +27,12 @@
     </style>
 </head>
 <body>
+
+<form action="index.php" method="GET">
+    <input type="text" name="q">
+    <input type="submit" value="pesquisar">
+</form>
+<br><br>
 <a href="form_tarefas.php">Incluir</a>
 <br><br>
 <?php
@@ -34,6 +47,11 @@ if($conn->connect_error){
     die("A conexão falhou". $conn->connect_error);
 }
 $sql = "SELECT * FROM `tarefas`";
+
+if($querry != ""){
+    $sql .= "WHERE nome LIKE'%".$querry."%'";
+}
+
 $result = $conn->query($sql);
 
 if($result->num_rows > 0 ){

@@ -49,6 +49,8 @@ $idTarefa = $_GET["id"];
         <input type="submit" value="Gravar"/>
         <input type="hidden" name="id" value="<?=$id?>" />
     </form>
-    
+    <br><br>
+
+    <a href="index.php">Voltar</a>
 </body>
 </html>
