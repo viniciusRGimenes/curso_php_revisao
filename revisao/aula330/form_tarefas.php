@@ -47,6 +47,7 @@ $idTarefa = $_GET["id"];
             <option value="0" <?$row=["status"]==1?"SELECTED":"";?>> Desativado</option>
         </select><br><br>
         <input type="submit" value="Gravar"/>
+        <input type="hidden" name="id" value="<?=$id?>" />
     </form>
     
 </body>
