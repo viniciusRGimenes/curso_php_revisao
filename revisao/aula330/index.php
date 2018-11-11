@@ -38,7 +38,13 @@ $result = $conn->query($sql);
 if($result->num_rows > 0 ){
     echo "Total de registros: ". $result->num_rows ."<br>"."<br>";
     echo "<table>";
-    echo"<tr><th>Id</th><th>Nome</th><th>Detalhes</th><th>Status</th></tr>";
+    echo"<tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Detalhes</th>
+            <th>Status</th>
+            <th></th>
+            </tr>";
 
 
     while($row = $result->fetch_assoc()){
@@ -54,7 +60,7 @@ if($result->num_rows > 0 ){
         }else{
             echo "<td>". "Ativado"."</td>";
         }
-
+        echo "<td><a href='apagar_tarefa.php?id=".$row["id"]."'>Apagar</a></td>";
         echo "</tr>";
     }
         echo "</table>";
