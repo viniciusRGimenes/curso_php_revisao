@@ -4,8 +4,8 @@ $usuario = "root";
 $senha = "phprs";
 $banco = "curso_php";
 
-$nome = $_POST["nome"];
-$detalhes = $_POST["detalhes"];
+$email = $_POST["email"];
+$senhausu = $_POST["senhausu"];
 $status = $_POST["status"];
 $id = $_POST["id"];
 
@@ -16,12 +16,12 @@ if($conn->connect_error){
 
 if($id > 0){
     $sql = "UPDATE tarefas SET ";
-    $sql .= "nome = '".$nome."' ";
-    $sql .= ",detalhes = '".$detalhes."' ";
+    $sql .= "email = '".$email."' ";
+    $sql .= ",senhausu = '".$senhausu."' ";
     $sql .= ",status = '".$status."' ";
     $sql .= "WHERE id = " .$id;
 }else{
-    $sql = "INSERT INTO tarefas (nome, detalhes,status) VALUES ( '$nome', '$detalhes', '$status')";
+    $sql = "INSERT INTO tarefas (email, senhausu,status) VALUES ( '$email', '$senhausu', '$status')";
 }
 
 if($conn->query($sql)===TRUE){

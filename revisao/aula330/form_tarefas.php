@@ -21,8 +21,8 @@ $idTarefa = $_GET["id"];
 
             $row = $result->fetch_assoc();
             $id = $row["id"];
-            $nome = $row["nome"];
-            $detalhes = $row["detalhes"];
+            $email = $row["email"];
+            $senhausu = $row["senhausu"];
             $status = $row["status"];
         }
     }
@@ -39,8 +39,8 @@ $idTarefa = $_GET["id"];
 </head>
 <body>
     <form action="gravar_tarefa.php" method="post">
-        <input type="text" name="nome" placeholder="Nome" value="<?=$nome?>"><br><br>
-        <textarea type="text" rows="5" cols="50" name="detalhes" placeholder="Detalhes"><?=$detalhes?></textarea><br><br>
+        <input type="email" name="email" placeholder="email" value="<?=$email?>"><br><br>
+        <input type="password"name="senhausu" placeholder="senha" value="<?=$senhausu?>"><br><br>
         <label>Status</label><br>
         <select name="status">
             <option value="1" <?$row=["status"]==0?"SELECTED":"";?> >Ativado</option>

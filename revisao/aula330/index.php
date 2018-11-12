@@ -49,7 +49,7 @@ if($conn->connect_error){
 $sql = "SELECT * FROM `tarefas`";
 
 if($querry != ""){
-    $sql .= "WHERE nome LIKE'%".$querry."%'";
+    $sql .= "WHERE email LIKE'%".$querry."%'";
 }
 
 $result = $conn->query($sql);
@@ -59,8 +59,8 @@ if($result->num_rows > 0 ){
     echo "<table>";
     echo"<tr>
             <th>Id</th>
-            <th>Nome</th>
-            <th>Detalhes</th>
+            <th>email</th>
+            <th>senhausu</th>
             <th>Status</th>
             <th></th>
             </tr>";
@@ -72,8 +72,8 @@ if($result->num_rows > 0 ){
         echo "<tr>";
 
         echo "<td>". $row["id"]. "</td>"    ;
-        echo "<td>". $row["nome"]."</td>";
-        echo "<td>". $row["detalhes"]. "</td>";
+        echo "<td>". $row["email"]."</td>";
+        echo "<td>". $row["senhausu"]. "</td>";
         if($row["status"]===0){
             echo "<td>". "desativado". "</td>";
         }else{
