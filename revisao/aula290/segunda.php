@@ -9,4 +9,4 @@ print("<pre>");
 var_dump($_SESSION);
 ?>
 
-<a href="terceira.php">terceira.php</a>
+<a href="terceira.php">terceira</a>

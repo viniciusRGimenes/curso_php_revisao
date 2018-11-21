@@ -8,3 +8,5 @@ $_SESSION["valor"]++;
 print("<pre>");
 var_dump($_SESSION);
 ?>
+
+<a href="index.php">segunda</a>
