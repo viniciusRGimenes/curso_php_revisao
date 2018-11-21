@@ -1,9 +1,6 @@
 <?php
-
 $idTarefa = $_GET["id"];
-
     if($idTarefa > 0){
-    
         $servidor = "revisao_db_1";
         $usuario = "root";
         $senha = "phprs";
@@ -13,12 +10,9 @@ $idTarefa = $_GET["id"];
         if($conn->connect_error){
             die("A conexão falhou". $conn->connect_error);
         }
-        
         $sql = "SELECT * FROM tarefas WHERE id = " .$idTarefa;
-
         $result = $conn->query($sql);
         if($result->num_rows > 0){
-
             $row = $result->fetch_assoc();
             $id = $row["id"];
             $email = $row["email"];
@@ -26,12 +20,7 @@ $idTarefa = $_GET["id"];
             $status = $row["status"];
         }
     }
-
-
-
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,7 +39,6 @@ $idTarefa = $_GET["id"];
         <input type="hidden" name="id" value="<?=$id?>" />
     </form>
     <br><br>
-
-    <a href="index.php">Voltar</a>
+        <a href="index.php">Voltar</a>
 </body>
 </html>

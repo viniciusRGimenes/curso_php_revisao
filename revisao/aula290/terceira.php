@@ -2,7 +2,7 @@
 session_start();
 
 
-$_SESSION["valor"] = "1";
+$_SESSION["valor"]++;
 
 
 print("<pre>");
