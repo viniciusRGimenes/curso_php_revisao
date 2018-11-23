@@ -33,7 +33,7 @@
         
         echo $result->num_rows . " registro(s) listado(s).<br><br>";
         echo "<table>";
-        echo "<tr><th>Id</th><th>Nome</th><th>Detalhes</th><th>Status</th></tr>";
+        echo "<tr><th>Id</th><th>Nome</th><th>Detalhes</th><th>Status</th><th></th><th></th></tr>";
 
         while($row = $result->fetch_assoc()){
 
@@ -41,7 +41,10 @@
             echo "<td>".$row["id"]."</td>";
             echo "<td>".$row["nome"]."</td>";
             echo "<td>".$row["detalhes"]."</td>";
-            echo "<td>".$row["status"]."</td>";
+            echo "<td>";
+            echo ($row["status"]==0)?"A fazer":"Feita";
+            echo "<td><a href='excluir_tarefa.php?id=".$row["id"]."'>Excluir</td>";
+            echo "<td><a href='incluir_tarefa.php?id=".$row["id"]."'>Alterar</td>";
             echo "</tr>";
         }
 
