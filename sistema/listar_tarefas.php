@@ -1,34 +1,58 @@
-<?php
+<!DOCTYPE html>
+<head>
+    <title>tarefas</title>
+    <style>
+        table{
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width:100%;
+        }
+        th, td{
+            border:1px solid black;
+            text-align:left;
+            padding:8px;
+        }
+        tr:nth-child(even){
+            background-color:silver;
+        }
+    </style>
+</head>
+<body>
 
-header("content-type:text/html; charset=ISO-8859-1");
+    <br><br>
+    <a href="incluir_tarefa.php">Incluir</a>
+    <br><br>
+    <?php
 
-$servidor = "revisao_db_1";
-$usuario = "root";
-$senha = "phprs";
-$banco = "sistema_curso_php";
+    require_once("criar_conexao.php");
 
-$conn = new mysqli($servidor, $usuario, $senha, $banco);
-if($conn->connect_error){
-    die("A conexão falhou". $conn->connect_error);
-}
+    $sql = "SELECT * FROM tarefas";
+    $result = $conn->query($sql);
 
-$sql = "SELECT * FROM tarefas";
-$result = $conn->query($sql);
+    if($result->num_rows > 0){
+        
+        echo $result->num_rows . " registro(s) listado(s).<br><br>";
+        echo "<table>";
+        echo "<tr><th>Id</th><th>Nome</th><th>Detalhes</th><th>Status</th></tr>";
 
-if($result->num_rows > 0){
+        while($row = $result->fetch_assoc()){
 
-    while($row = $result->fetch_assoc()){
+            echo "<tr>";
+            echo "<td>".$row["id"]."</td>";
+            echo "<td>".$row["nome"]."</td>";
+            echo "<td>".$row["detalhes"]."</td>";
+            echo "<td>".$row["status"]."</td>";
+            echo "</tr>";
+        }
 
-        echo "Id: ".$row["id"]."<br>";
-        echo "Nome: ".$row["nome"]."<br>";
-        echo "Detalhes: ".$row["detalhes"]."<br>";
-        echo "Status: ".$row["status"]."<br>";
+        echo "</table";
+    }else{
+        echo "Nada";
     }
-}else{
-    echo "Nada";
-}
 
 
-$conn->close();
+    $conn->close();
 
-?>
+    ?>
+</body>
+</html>
