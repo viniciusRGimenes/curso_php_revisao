@@ -1,3 +1,6 @@
+<?php
+    require_once("usuario_ja_autenticado.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +9,7 @@
 <body>
 
 <?php
+
     $id = $_GET["id"];
 
     require_once("criar_conexao.php");

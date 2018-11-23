@@ -1,5 +1,5 @@
 <?php
-
+require_once("usuario_ja_autenticado.php");
 require_once("criar_conexao.php");
 
 $sql= "DELETE FROM tarefas WHERE id = ". $_GET["id"];

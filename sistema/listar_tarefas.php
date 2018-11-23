@@ -1,4 +1,5 @@
 <?php
+    require_once("usuario_ja_autenticado.php");
     header("content-type:text/html; charset=ISO-8859-1");
     $key = $_POST["key"];
 ?>
