@@ -1,3 +1,7 @@
+<?php
+    header("content-type:text/html; charset=ISO-8859-1");
+    $key = $_POST["key"];
+?>
 <!DOCTYPE html>
 <head>
     <title>tarefas</title>
@@ -19,6 +23,11 @@
 </head>
 <body>
 
+    <form action="listar_tarefas.php" method="post">
+        <input type="text" name="key">
+        <input type="submit" value="pesquisar">
+    </form>
+
     <br><br>
     <a href="incluir_tarefa.php">Incluir</a>
     <br><br>
@@ -27,6 +36,9 @@
     require_once("criar_conexao.php");
 
     $sql = "SELECT * FROM tarefas";
+    if($key != ""){
+        $sql .= " WHERE nome LIKE'%$key%'";
+    }
     $result = $conn->query($sql);
 
     if($result->num_rows > 0){
