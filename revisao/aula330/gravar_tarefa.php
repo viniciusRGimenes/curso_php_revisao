@@ -32,4 +32,4 @@ if($conn->query($sql)===TRUE){
 $conn->close();
 
 ?>
-<a href="index.php">Voltar</a>
+<a href="listar_tarefas.php">Voltar</a>

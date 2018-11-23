@@ -39,6 +39,6 @@ $idTarefa = $_GET["id"];
         <input type="hidden" name="id" value="<?=$id?>" />
     </form>
     <br><br>
-        <a href="index.php">Voltar</a>
+        <a href="listar_tarefas.php">Voltar</a>
 </body>
 </html>
