@@ -1,5 +1,5 @@
 <?php
-$servidor = "revisao_db_1";
+    $servidor = "revisao_db_1";
     $usuario = "root";
     $senha = "phprs";
     $banco = "sistema_curso_php";
